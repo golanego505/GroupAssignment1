@@ -53,6 +53,21 @@ public class Library {
 		System.out.println("Cannot remove book "+ book.toString());
 		return false;
 	}
+	
+	/**
+	 * Takes an ISBN and searches the array for the book that
+	 * matches it.
+	 * @param ISBN
+	 * @return book object that is found, or null if not found
+	 */
+	public Book searchByISBN(String ISBN) {
+		for(Book book : books) {
+			if(book.getISBN().compareTo(ISBN) == 0) {
+				return book;
+			}
+		}
+		return null;
+	}
 	/**
 	 * Displays each book in array with overriden toString in Book class.
 	 */
