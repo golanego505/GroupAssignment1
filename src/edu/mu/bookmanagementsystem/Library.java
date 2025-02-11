@@ -10,6 +10,22 @@ public class Library {
 	private Book[] books = new Book[5];
 	private int count;
 	
-	
+	/**
+	 * Adds a Book to the books array with the passed book.
+	 * 
+	 * @param book
+	 * @return true if insertion was successful, false if array full.
+	 */
+	public boolean addBook(Book book){
+		
+		for(int i = 0; i < 5; i ++) {
+			if(books[i] == null) {
+				books[i] = book;
+				this.count++;
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }
