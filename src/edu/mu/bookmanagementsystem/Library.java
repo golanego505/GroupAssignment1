@@ -54,13 +54,12 @@ public class Library {
 		return false;
 	}
 	/**
-	 * Displays each books author in book array. 
-	 * USING FOR TESTING addBook and removeBook methods
+	 * Displays each book in array with overriden toString in Book class.
 	 */
 	public void displayBooks() {
 		for(Book book : books) {
 			if(book != null) {
-				System.out.println(book.getAuthor());
+				book.toString();
 			}
 		}
 	}
