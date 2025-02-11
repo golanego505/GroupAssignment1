@@ -61,13 +61,14 @@ public class Library {
 	 * @return book object that is found, or null if not found
 	 */
 	public Book searchByISBN(String ISBN) {
-		for(Book book : books) {
-			if(book.getISBN().compareTo(ISBN) == 0) {
-				return book;
+		for(int i = 0; i < 5; i ++) {
+			if(books[i] != null && books[i].getISBN().compareTo(ISBN) == 0) {
+				return books[i];
 			}
 		}
 		return null;
 	}
+	
 	/**
 	 * Displays each book in array with overriden toString in Book class.
 	 */
