@@ -28,4 +28,12 @@ public class Library {
 		return false;
 	}
 	
+	public void displayBooks() {
+		for(Book book : books) {
+			if(book != null) {
+				System.out.println(book.getAuthor());
+			}
+		}
+	}
+	
 }
