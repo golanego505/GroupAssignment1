@@ -39,11 +39,12 @@ public class Library {
 	/**
 	 * Removes a book from the array if it exists
 	 * @param book
-	 * @return
+	 * @return true if removal was successful, false if book could not be removed
 	 */
 	public boolean removeBook(Book book) {
 		for(int i = 0; i < 5; i ++) {
-			if(books[i] != null && books[i].getTitle().equals(book.getTitle())){
+			if(books[i] != null && books[i].equals(book)){
+				System.out.println("Removing Book: "+ books[i].toString());
 				books[i] = null;
 				this.count--;
 				return true;
@@ -54,7 +55,7 @@ public class Library {
 	}
 	/**
 	 * Displays each books author in book array. 
-	 * USING FOR TESTING addBook method
+	 * USING FOR TESTING addBook and removeBook methods
 	 */
 	public void displayBooks() {
 		for(Book book : books) {
