@@ -11,17 +11,26 @@ public class Book {
 	public Book() {
 		this.title = "Unknown";
 		this.author = "Unknown";
-		ISBN = "Unknown";
+		this.ISBN = "Unknown";
 		this.price = 0.0;
 	}	
 	
 	public Book(String title, String author, String iSBN, double price) {
 		this.title = title;
 		this.author = author;
-		ISBN = iSBN;
+		this.ISBN = iSBN;
 		this.price = price;
 	}
+	
+	
 		
+	public Book(Book book) {
+		this.title = book.getTitle();
+		this.author = book.getAuthor();
+		this.ISBN = book.getISBN();
+		this.price = book.getPrice();
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -43,7 +52,7 @@ public class Book {
 	}
 
 	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+		this.ISBN = iSBN;
 	}
 
 	public double getPrice() {
