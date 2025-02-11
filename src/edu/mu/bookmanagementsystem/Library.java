@@ -59,7 +59,8 @@ public class Library {
 	public void displayBooks() {
 		for(Book book : books) {
 			if(book != null) {
-				book.toString();
+				String bookString = book.toString();
+				System.out.println(bookString);
 			}
 		}
 	}
