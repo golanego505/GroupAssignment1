@@ -27,7 +27,10 @@ public class Library {
 		}
 		return false;
 	}
-	
+	/**
+	 * Displays each books author in book array. 
+	 * USING FOR TESTING addBook method
+	 */
 	public void displayBooks() {
 		for(Book book : books) {
 			if(book != null) {
