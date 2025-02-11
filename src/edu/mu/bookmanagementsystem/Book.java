@@ -62,5 +62,18 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-		
+	
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", ISBN=" + ISBN + ", price=" + price + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		Book book = (Book)obj;
+		if(this.ISBN.equals(book.getISBN())) {
+			return true;
+		}
+		return false;
+	}		
 }
