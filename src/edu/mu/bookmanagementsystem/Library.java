@@ -11,24 +11,20 @@ public class Library {
 	private int count;
 	
 	/**
-	 * This get method is to make sure count is being iterrated correctly.
-	 * @return count.
-	 */
-	public int getCount() {
-		return this.count;
-	}
-	
-	/**
 	 * Adds a Book to the books array with the passed book.
-	 * 
-	 * @param book
+	 * Returns immediately if count equals the size of the array.
+	 * @param book		The book being inserted.
 	 * @return true if insertion was successful, false if array is full.
 	 */
 	public boolean addBook(Book book){
 		
+		if(this.count == 5) {
+			return false;
+		}
+		
 		for(int i = 0; i < 5; i ++) {
 			if(books[i] == null) {
-				books[i] = book;
+				books[i] = new Book(book);
 				this.count++;
 				return true;
 			}
@@ -38,26 +34,24 @@ public class Library {
 	
 	/**
 	 * Removes a book from the array if it exists
-	 * @param book
+	 * @param book		The book being removed.
 	 * @return true if removal was successful, false if book could not be removed
 	 */
 	public boolean removeBook(Book book) {
 		for(int i = 0; i < 5; i ++) {
 			if(books[i] != null && books[i].equals(book)){
-				System.out.println("Removing Book: "+ books[i].toString());
 				books[i] = null;
 				this.count--;
 				return true;
 			}
 		}
-		System.out.println("Cannot remove book "+ book.toString());
 		return false;
 	}
 	
 	/**
 	 * Takes an ISBN and searches the array for the book that
 	 * matches it.
-	 * @param ISBN
+	 * @param ISBN		The ISBN being searched for
 	 * @return book object that is found, or null if not found
 	 */
 	public Book searchByISBN(String ISBN) {
@@ -70,13 +64,15 @@ public class Library {
 	}
 	
 	/**
-	 * Displays each book in array with overriden toString in Book class.
+	 * Displays each book in array with toString in Book class.
 	 */
 	public void displayBooks() {
+		int count = 1;
 		for(Book book : books) {
 			if(book != null) {
 				String bookString = book.toString();
-				System.out.println(bookString);
+				System.out.println(count + ". " + bookString);
+				count++;
 			}
 		}
 	}
